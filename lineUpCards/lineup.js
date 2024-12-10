@@ -81,7 +81,7 @@ async function generatePreview(teamName, logoDataURL, logoType) {
 
     const logoBoxWidth = 164.43;
     const logoBoxHeight = 45.91;
-    const nameBoxWidth = 59.54;
+    const nameBoxWidth = 55;
     const nameBoxHeight = 13;
 
     const logoPositions = [
@@ -90,9 +90,9 @@ async function generatePreview(teamName, logoDataURL, logoType) {
         { x: 225, y: 735.93 - 495 },
     ];
     const namePositions = [
-        { x: 470, y: 735.93 - 53 },
-        { x: 470, y: 735.93 - 276 },
-        { x: 470, y: 735.93 - 500 },
+        { x: 474, y: 735.93 - 53 },
+        { x: 474, y: 735.93 - 276 },
+        { x: 474, y: 735.93 - 500 },
     ];
 
     let logoImage = await pdfDoc.embedPng(await fetch(logoDataURL).then((res) => res.arrayBuffer()));
@@ -166,7 +166,7 @@ async function generateDownload(teamName, logoDataURL, logoType) {
 
     const logoBoxWidth = 164.43;
     const logoBoxHeight = 45.91;
-    const nameBoxWidth = 59.54;
+    const nameBoxWidth = 55;
     const nameBoxHeight = 13;
 
     const logoPositions = [
@@ -175,9 +175,9 @@ async function generateDownload(teamName, logoDataURL, logoType) {
         { x: 225, y: 735.93 - 495 },
     ];
     const namePositions = [
-        { x: 470, y: 735.93 - 53 },
-        { x: 470, y: 735.93 - 276 },
-        { x: 470, y: 735.93 - 500 },
+        { x: 474, y: 735.93 - 53 },
+        { x: 474, y: 735.93 - 276 },
+        { x: 474, y: 735.93 - 500 },
     ];
 
     let logoImage = await pdfDoc.embedPng(await fetch(logoDataURL).then((res) => res.arrayBuffer()));
