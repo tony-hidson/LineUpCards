@@ -102,8 +102,11 @@ async function generatePDF(teamName, logoDataURL, logoType, isPreview) {
         logoImage = await pdfDoc.embedPng(await fetch(logoDataURL).then((res) => res.arrayBuffer()));
     } else if (logoType === 'image/jpeg' || logoType === 'image/jpg') {
         logoImage = await pdfDoc.embedJpg(await fetch(logoDataURL).then((res) => res.arrayBuffer()));
+    } else if (logoType === 'image/svg+xml') {
+        const pngDataURL = await convertSvgToPng(logoDataURL);
+        logoImage = await pdfDoc.embedPng(await fetch(pngDataURL).then((res) => res.arrayBuffer()));
     } else {
-        alert('Unsupported image type. Please upload PNG, JPG, or JPEG.');
+        alert('Unsupported image type. Please upload PNG, JPG, or SVG.');
         return;
     }
 
