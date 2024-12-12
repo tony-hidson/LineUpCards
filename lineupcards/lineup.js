@@ -16,7 +16,7 @@ document.getElementById('loadPreview').addEventListener('click', async () => {
     reader.onload = async function (event) {
         try {
             const logoDataURL = await processLogoInput(logoInput, event.target.result);
-            await generatePreview(teamName, logoDataURL, 'image/png');
+            await generatePreview(teamName, logoDataURL, logoInput.type);
         } catch (err) {
             console.error('Error in Load Preview:', err);
         }
@@ -37,7 +37,7 @@ document.getElementById('downloadCard').addEventListener('click', async () => {
     reader.onload = async function (event) {
         try {
             const logoDataURL = await processLogoInput(logoInput, event.target.result);
-            await generateDownload(teamName, logoDataURL, 'image/png');
+            await generateDownload(teamName, logoDataURL, logoInput.type);
         } catch (err) {
             console.error('Error in Download Card:', err);
         }
@@ -47,6 +47,7 @@ document.getElementById('downloadCard').addEventListener('click', async () => {
 
 // Process the logo input to handle SVG conversion if needed
 async function processLogoInput(file, fileDataURL) {
+    console.log('File type:', file.type);
     if (file.type === 'image/svg+xml') {
         return await convertSvgToPng(fileDataURL);
     }
@@ -95,7 +96,16 @@ async function generatePreview(teamName, logoDataURL, logoType) {
         { x: 481, y: 735.93 - 499 },
     ];
 
-    let logoImage = await pdfDoc.embedPng(await fetch(logoDataURL).then((res) => res.arrayBuffer()));
+    if (logoType === 'image/png') {
+        const logoBytes = await fetch(logoDataURL).then((res) => res.arrayBuffer());
+        logoImage = await pdfDoc.embedPng(logoBytes);
+    } else if (logoType === 'image/jpeg' || logoType === 'image/jpg') {
+        const logoBytes = await fetch(logoDataURL).then((res) => res.arrayBuffer());
+        logoImage = await pdfDoc.embedJpg(logoBytes);
+    } else {
+        alert('Unsupported image type. Please upload a PNG, JPG, or JPEG file.');
+        return;
+    }
     const logoDims = logoImage.scaleToFit(logoBoxWidth, logoBoxHeight);
 
     // Place logos
@@ -180,7 +190,17 @@ async function generateDownload(teamName, logoDataURL, logoType) {
         { x: 481, y: 735.93 - 499 },
     ];
 
-    let logoImage = await pdfDoc.embedPng(await fetch(logoDataURL).then((res) => res.arrayBuffer()));
+    let logoImage;
+    if (logoType === 'image/png') {
+        const logoBytes = await fetch(logoDataURL).then((res) => res.arrayBuffer());
+        logoImage = await pdfDoc.embedPng(logoBytes);
+    } else if (logoType === 'image/jpeg' || logoType === 'image/jpg') {
+        const logoBytes = await fetch(logoDataURL).then((res) => res.arrayBuffer());
+        logoImage = await pdfDoc.embedJpg(logoBytes);
+    } else {
+        alert('Unsupported image type. Please upload a PNG, JPG, or JPEG file.');
+        return;
+    }
     const logoDims = logoImage.scaleToFit(logoBoxWidth, logoBoxHeight);
 
     // Place logos
@@ -233,7 +253,8 @@ async function generateDownload(teamName, logoDataURL, logoType) {
         });
     });
 
-    const pdfBytes = await pdfDoc.save();
+    const pdfBytes = await pdfDoc.saveAsBase64({ dataUri: true });
+    document.getElementById('cardPreview').src = pdfBytes;
     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
     const url = URL.createObjectURL(blob);
 
