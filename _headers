@@ -1,7 +1,6 @@
-/*
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
-  Referrer-Policy: no-referrer-when-downgrade
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+  Content-Security-Policy; default-src 'self'; img-src 'self' example.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';
+  X-Content-Type-Options; nosniff;
+  X-Frame-Options; DENY;
+  Referrer-Policy; no-referrer-when-downgrade;
+  Strict-Transport-Security; max-age-31536000; includeSubDomains; preload;
