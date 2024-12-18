@@ -10,7 +10,6 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
@@ -18,10 +17,22 @@
             background-color: #f4f4f4;
         }
 
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px; /* Center and add space below the logo */
+            width: 50%; /* 35% of the page width */
+            max-width: 400px; /* Optional: Limit max size */
+        }
+
         h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #2c3e50;
+            color: #000407;
         }
 
         p {
@@ -58,16 +69,23 @@
     </style>
 </head>
 <body>
-    <h1>Official Gear</h1>
-    <p>The site is under construction and will launch on <strong>January 1st, 2025</strong>.</p>
-    
-    <div class="links">
-        <a href="Official Gear 2024 Product List.pdf" target="_blank">Download 2024 Product List (PDF)</a>
-        <a href="lineupcards/">Go to Line-Up Cards</a>
+    <div class="container">
+        <!-- Logo Section -->
+        <img src="logo.svg" alt="Official Gear Logo" class="logo">
+        
+        <!-- Main Content -->
+        <h1>Official Gear</h1>
+        <p>The site is under construction and will launch on <strong>January 1st, 2025</strong>.</p>
+        
+        <div class="links">
+            <a href="Official Gear 2024 Product List.pdf" target="_blank">Download 2024 Product List (PDF)</a>
+            <a href="lineupcards/">Go to Line-Up Cards</a>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            &copy; 2024 Official Gear. All rights reserved.
+        </footer>
     </div>
-
-    <footer>
-        &copy; 2024 Official Gear. All rights reserved.
-    </footer>
 </body>
 </html>
