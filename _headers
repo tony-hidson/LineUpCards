@@ -1,6 +1,6 @@
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';
+  Content-Security-Policy: default-src https:; object-src 'none'; default-src 'self'; img-src 'self' https://i.imgur.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';font-src https://fonts.gstatic.com;
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer-when-downgrade
