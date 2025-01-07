@@ -63,11 +63,12 @@
     <script src="lineup.js"></script>
 
     <script>
-        // Initialize the download counter
-        let downloadCount = 0;
+        // Initialize the counter from localStorage or default to 0
+        let downloadCount = parseInt(localStorage.getItem('downloadCount')) || 0;
 
-        // Get the counter display element
+        // Update the counter display
         const downloadCounter = document.getElementById('downloadCounter');
+        downloadCounter.textContent = downloadCount;
 
         // Add an event listener to the Download Line-up Card button
         document.getElementById('downloadCard').addEventListener('click', () => {
@@ -75,6 +76,9 @@
             downloadCount++;
             // Update the display
             downloadCounter.textContent = downloadCount;
+
+            // Save the updated count to localStorage
+            localStorage.setItem('downloadCount', downloadCount);
         });
     </script>
 </body>
