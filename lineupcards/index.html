@@ -22,6 +22,17 @@
             max-width: 400px;
             height: auto;
         }
+
+        #downloadCounterContainer {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #34495e;
+        }
+
+        #downloadCounterContainer span {
+            font-weight: bold;
+            color: #2980b9;
+        }
     </style>
 </head>
 <body>
@@ -41,10 +52,30 @@
     
     <h2>Preview:</h2>
     <iframe id="cardPreview" style="width:100%; height:500px;" frameborder="1"></iframe>
+    
+    <div id="downloadCounterContainer">
+        Total Line-up Cards Downloaded: <span id="downloadCounter">0</span>
+    </div>
 
     <!-- Include pdf-lib library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <!-- Include lineup.js script -->
     <script src="lineup.js"></script>
+
+    <script>
+        // Initialize the download counter
+        let downloadCount = 0;
+
+        // Get the counter display element
+        const downloadCounter = document.getElementById('downloadCounter');
+
+        // Add an event listener to the Download Line-up Card button
+        document.getElementById('downloadCard').addEventListener('click', () => {
+            // Increment the counter
+            downloadCount++;
+            // Update the display
+            downloadCounter.textContent = downloadCount;
+        });
+    </script>
 </body>
 </html>
