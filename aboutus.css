@@ -1,0 +1,348 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Muli', sans-serif;
+}
+
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #F5DEB3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    color: black;
+    padding: 0 8%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0px;
+
+}
+
+nav a {
+text-decoration: none;
+color: black;
+position: relative;
+display: inline-block;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  left: 0;
+  background: black;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+
+
+.logo {
+    width: 160px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: wheat;
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0px 10px rgba(247, 242, 242, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+}
+
+
+.sidebar li {
+  width: 100%;
+}
+.sidebar a {
+  width: 100%;
+}
+
+.menu-button {
+  display: none;
+}
+.content h2 {
+  margin-bottom: 0px;
+line-height: 1.8em;
+}
+
+h2, .h2 {
+  font-size: 22px;
+margin-bottom: 0.75em;
+line-height: 1.5em;
+}
+
+h2 {
+  display: block;
+font-size: 1.5em;
+margin-block-start: 0.83em;
+margin-block-end: 0.83em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 70px;
+    margin-top: 12%;
+}
+
+
+/* Global paragraph styling */
+.page p {
+    font-family: "Inter", "Poppins", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #222;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+/* Optional: center your text block nicely */
+.page {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+/* Make your h2 headings cleaner and professional */
+.page h2 {
+    font-family: "Inter", "Poppins", Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 40px;
+    color: #111;
+}
+
+/* Slight spacing improvement around video section */
+.card {
+    margin-top: 40px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.hero button {
+    background: #393939;
+    border: 0;
+    outline: none;
+    padding: 15px 35px;
+    color: white;
+    margin-top: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.merriweather {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+p {
+   display: block;
+margin-block-start: 1em;
+margin-block-end: 1em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+margin-bottom: 3.5em; /* Adjust this value as needed */
+line-height: 2;
+}
+
+.indicator span {
+display: inline-block;
+background: #3a3a3a;
+height: 15px; 
+width: 15px;
+border-radius: 50%;
+margin-right: 10px;
+}
+
+.indicator {
+    margin-top: 150px;
+
+}
+
+.indicator span.active{
+    background: #bfbfbf;
+}
+
+.cta {
+position: absolute;
+width: 25%;
+min-width: 250px;
+right: 8%;
+bottom: 100px;
+
+}
+
+.card .thumbnail{
+  width:100%;
+}
+.tag {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: table;
+  margin: 10px auto;
+} 
+.location {
+  background-color: black;
+  color: white;
+}
+
+
+.card {
+  margin: 30px;
+  padding: 20px 40px 40px;
+  max-width: 500px;
+  text-align: left;
+  background: wheat;
+  border-bottom: 4px solid wheat;
+  border-radius: 6px;
+  transition: all .5s;
+}
+
+
+ul.skills {
+  padding: 0;
+  text-align: center;
+}
+
+.skills li {
+  border-radius: 6px;
+  display: inline-block;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  margin: 2px;
+}
+
+.skills li:nth-child(odd) {
+  background: black;
+}
+
+footer {
+  width: 100%;
+  min-height: 30px;
+  padding: 20px 0 40px 20px;
+}
+
+footer .copyright {
+  top: -8px;
+  font-size: .75em;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+a.social {
+  display: inline-block;
+  text-indent: -9999px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  opacity: .4;
+  transition: all .5s;
+}
+a.twitter {
+  background-image: url(images/twitter.svg);
+}
+a.linkedin {
+  background-image: url(images/linkedin.svg);
+}
+a.github {
+  background-image: url(images/github.svg);
+}
+a.social:hover {
+  opacity: 1;
+}
+.clearfix {
+  clear: both;
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 720px) {
+  
+  .flex {
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: flex; 
+      max-width: 1200px;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      margin: 0 auto;
+  }
+}
+
+@media(max-width: 400px){
+   .sidebar{
+    width: 100%;
+   }
+}
+
+@media(max-width: 800px){
+  .hideOnMobile{
+    display: none;
+  }
+  .menu-button{
+    display: block;
+  }
+}
+
+@media(max-width: 400px){
+   .sidebar{
+    width: 100%;
+   }
+}

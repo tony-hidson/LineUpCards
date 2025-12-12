@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> Official Gear</title>
+        <link rel="stylesheet" href="lineupcard.css">
+        <link rel="shortcut icon" href="PDF Whistle Logo - no BG.png" type="image/x-icon">
+    </head>
+    <body>
+        <div class="hero">
+            <nav> <img src="BlackLogo.png" class="logo" alt=""> 
+                <ul class="sidebar">
+                  <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <li><a href="index.html">HOME.</a></li>
+                    <li><a href="clipboard.html">FLIPBOARDS.</a></li>
+                    <li><a href="lineup.html">LINEUP CARDS.</a></li>
+                    <li><a href="Official Gear Products 2025.pdf">MORE GEAR.</a></li>
+                    <li><a href="aboutus.html">ABOUT US.</a></li>
+                </ul>
+                 <ul>
+                    <li class="hideOnMobile"><a href="index.html">HOME.</a></li>
+                    <li class="hideOnMobile"><a href="clipboard.html">FLIPBOARDS.</a></li>
+                    <li class="hideOnMobile"><a href="lineupcard.html">LINEUP CARDS.</a></li>
+                    <li class="hideOnMobile"><a href="Official Gear Products 2025.pdf">MORE GEAR.</a></li>
+                    <li class="hideOnMobile"><a href="aboutus.html">ABOUT US.</a></li>
+                    <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                </ul>
+            </nav>
+            <script>
+              function showSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+              }
+              function hideSidebar(){
+                 const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+              }
+            </script>
+    
+    </body>
+<style>
+        body {
+            font-family: 'poppins', sans-serif;
+            margin: auto;
+        }
+
+        #formContainer {
+            margin-bottom: 20px;
+        }
+
+        #cardPreview {
+            border: 1px solid #000;
+            display: block;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        #downloadCounterContainer {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: black;
+        }
+
+        #downloadCounterContainer span {
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+    
+    <h1>Line-up Card Generator.</h1>
+    <div id="formContainer">
+        <form id="lineUpForm">
+            <label for="teamNameInput">Team Abbreviation:</label>
+            <input type="text" id="teamNameInput" placeholder="Enter team abbreviation">
+            <br><br>
+            <label for="logoInput">Upload Team Logo:</label>
+            <input type="file" id="logoInput" accept="image/*">
+            <br><br>
+            <button type="button" id="loadPreview">Load Preview.</button>
+            <button type="button" id="downloadCard">Download Line-up Cards.</button>
+        </form>
+    </div>
+    
+    <h2>Preview:</h2>
+    <iframe id="cardPreview" style="width:100%; height:500px;" frameborder="1"></iframe>
+    
+    <div id="downloadCounterContainer">
+        Total Line-up Card Downloads: <span id="downloadCounter">0</span>
+    </div>
+
+    <!-- Include pdf-lib library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <!-- Include lineup.js script -->
+    <script src="lineup.js"></script>
+
+    <script>
+        // Initialize the counter from localStorage or default to 0
+        let downloadCount = parseInt(localStorage.getItem('downloadCount')) || 0;
+
+        // Update the counter display
+        const downloadCounter = document.getElementById('downloadCounter');
+        downloadCounter.textContent = downloadCount;
+
+        // Add an event listener to the Download Line-up Card button
+        document.getElementById('downloadCard').addEventListener('click', () => {
+            // Increment the counter
+            downloadCount++;
+            // Update the display
+            downloadCounter.textContent = downloadCount;
+
+            // Save the updated count to localStorage
+            localStorage.setItem('downloadCount', downloadCount);
+        });
+    </script>
+            <footer>
+            &copy; 2024 Official Gear. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

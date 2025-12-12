@@ -3,94 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Gear</title>
-    <meta name="description" content="Official Gear is under construction. Launching on January 1st, 2025. Access our product list and Line-Up Card Generator.">
-    <meta name="keywords" content="Official Gear, Product List, Line-Up Card Generator, Custom Volleyball Gear, Under Construction">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
 
-        .container {
-            max-width: 1000px;
-            width: 100%;
-        }
+    <!-- SEO TITLE -->
+    <title>Official Gear | Digital Coaching Boards & Lineup Cards for Sports</title>
 
-        .logo {
-            display: block;
-            margin: 0 auto 20px; /* Center and add space below the logo */
-            width: 50%; /* 35% of the page width */
-            max-width: 400px; /* Optional: Limit max size */
-        }
+    <!-- SEO META DESCRIPTION -->
+    <meta name="description" content="Official Gear offers digital coaching boards and custom lineup cards for soccer, basketball, hockey, rugby, and volleyball. Upgrade your coaching strategies with interactive tools today.">
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #000407;
-        }
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="whistle-logo.png" type="image/x-icon">
 
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: #34495e;
-        }
-
-        .links {
-            margin-top: 20px;
-        }
-
-        a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #2980b9;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        a:hover {
-            background-color: #3498db;
-        }
-
-        footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #7f8c8d;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Logo Section -->
-        <img src="logo.svg" alt="Official Gear Logo" class="logo">
-        
-        <!-- Main Content -->
-        <h1>Official Gear</h1>
-        <p>The site is under construction and will launch in <strong>July 2025</strong>.</p>
-        <p>Click on the links below to view the 2025 Product List, and the FREE Custom Line-Up Card Generator.</p>
-        
-        <div class="links">
-            <a href="Official Gear Products 2025.pdf" target="_blank">Download 2025 Product List (PDF)</a>
-            <a href="lineupcards/">Create Custom Line-Up Cards</a>
-        </div>
-        
-        <!-- Footer -->
-        <footer>
-            &copy; 2024 Official Gear. All rights reserved.
-        </footer>
+<div class="hero">
+    <!-- NAVIGATION -->
+    <nav> 
+        <img src="BlackLogo.png" class="logo" alt="Official Gear Logo"> 
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html">HOME.</a></li>
+            <li><a href="clipboard.html">FLIPBOARDS.</a></li>
+            <li><a href="lineup.html">LINEUP CARDS.</a></li>
+            <li><a href="Official-Gear-Products-2025.pdf">MORE GEAR.</a></li>
+            <li><a href="aboutus.html">ABOUT US.</a></li>
+        </ul>
+        <ul>
+            <li class="hideOnMobile"><a href="index.html">HOME.</a></li>
+            <li class="hideOnMobile"><a href="clipboard.html">FLIPBOARDS.</a></li>
+            <li class="hideOnMobile"><a href="lineup.html">LINEUP CARDS.</a></li>
+            <li class="hideOnMobile"><a href="Official-Gear-Products-2025.pdf">MORE GEAR.</a></li>
+            <li class="hideOnMobile"><a href="aboutus.html">ABOUT US.</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+        }
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+        }
+    </script>
+
+    <!-- HERO TEXT -->
+    <h1>Official Gear.</h1>
+    <h2>Fast. Efficient. Efective. If it works, it's us.</h2>
+
+    <button type="button" onclick="location.href='clipboard.html'" value="clipboard.html">Upgrade your game &#x27F6;</button>
+
+    <div class="cta">
+        <p>Create FREE custom lineup cards.</p>
+        <button type="button" onclick="location.href='lineup.html'" value="lineup.html">Discover &#x27F6;</button>
     </div>
+</div>
+
+<footer>
+    &copy; 2024 Official Gear. All rights reserved.
+</footer>
+
+<!-- JSON-LD STRUCTURED DATA FOR ORGANIZATION -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Official Gear",
+  "url": "homepage.html",
+  "logo": "BlackLogo.png",
+  "description": "Official Gear offers digital coaching boards and custom lineup cards for soccer, basketball, hockey, rugby, and volleyball. Upgrade your coaching strategies with interactive tools.",
+  "sameAs": [
+    "https://twitter.com/YourTwitter",
+    "https://www.linkedin.com/in/YourLinkedIn",
+    "https://github.com/YourGitHub"
+  ]
+}
+</script>
+
 </body>
 </html>
