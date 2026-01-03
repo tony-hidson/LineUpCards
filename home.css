@@ -408,6 +408,8 @@ a.github { background-image: url(images/github.svg); }
 .promo h1 {
         font-size: 26px;
         line-height: 1.2;
+        align-items: center;
+        margin-left: 18px;
 }
 
 .promo p {
