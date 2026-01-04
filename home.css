@@ -1,0 +1,847 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sora", sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    background-color: wheat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    color: black;
+    padding: 0 8%;
+}
+
+/* desktop: image behaves like background */
+.hero-gif {
+    position: absolute;
+    right: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 515px;
+    z-index: 1;
+    pointer-events: none;
+    margin-right: 320px;
+}
+
+/* keep text above */
+.hero h1,
+.hero button {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1{
+    margin-right: 30px;
+    white-space: nowrap;
+    font-size: 65px;
+    margin-top: 12%;
+}
+
+body {
+    background-color: wheat;
+}
+
+.gallery-section {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:wheat;
+    padding: 100px, 0px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 6%;
+}
+
+.box {
+    position: relative;
+    height: 300px;
+    width: 200px;
+    transform-style: preserve-3d;
+    animation: animate 24s linear infinite;
+    margin: 0 auto; /* center horizontally */
+    will-change: transform; /* GPU optimization */
+}
+
+@keyframes animate {
+    0% {
+       transform: perspective(1500px) rotateY(0deg); 
+    }
+    100% {
+       transform: perspective(1500px) rotateY(360deg); 
+    }
+}
+.box div {
+    position: absolute;
+    top: 0;left: 0;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateY(calc(var(--v) * 72deg)) translateZ(300px);
+}
+
+.box div img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.spin{
+    animation: spin1.4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+       transform: perspective(1500px) rotateY(0deg); 
+    }
+    100% {
+       transform: perspective(1500px) rotateY(360deg); 
+    }
+}
+
+.hero h2 {
+    font-weight: bold; /* makes text bold */
+    font-family: 'Poppins', sans-serif; /* change to any font you like */
+    font-size: 18px; /* optional: adjust size */
+    color: black; /* optional: set color */
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.promo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 60px 5%;
+    max-width: 1200px;     /* controls how wide it can grow */
+    margin: 0 auto;        /* centers it */
+    padding: 80px 6%;      /* slightly wider feel */
+}
+
+.promo h1 {
+    margin-left: 40px
+}
+
+.promo p {
+    margin-top: 20px;
+    font-size: large;
+    font-weight: bold; /* makes text bold */
+    margin-left: 25px;
+
+}
+
+.promo button {
+    background: black;
+    border: 0;
+    outline: none;
+    padding: 15px 35px;
+    color: wheat;
+    margin-top: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.hero button {
+    background: black;
+    border: 0;
+    outline: none;
+    padding: 15px 35px;
+    color: wheat;
+    margin-top: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+
+/* CALL TO ACTION */
+.cta {
+    position: absolute;
+    width: 25%;
+    min-width: 250px;
+    right: 8%;
+    bottom: 100px;
+}
+
+.cta p {
+    font-weight: bold; /* makes text bold */
+    font-family: 'Poppins', sans-serif; /* change to any font you like */
+    font-size: 18px; /* optional: adjust size */
+    color: black; /* optional: set color */
+}
+
+/* NAVIGATION */
+.brand-text {
+    display: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    font-weight: bold; /* makes text bold */
+    font-family: 'Poppins', sans-serif; /* change to any font you like */
+    font-size: 18px; /* optional: adjust size */
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    left: 0;
+    background: black;
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+
+/* LOGO */
+.logo {
+    width: 160px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: wheat;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0px 10px rgba(247, 242, 242, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li,
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.menu-button {
+    display: none; /* hidden by default */
+}
+
+
+/* INDICATORS */
+.indicator span {
+    display: block;
+    background: black;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.indicator span.active {
+    background: black;
+}
+
+.indicator {
+    margin-top: 150px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    background: url('images/ClevelandSkylineNeo-Rouge-copy.jpg') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding-top: 60px;
+    line-height: 1.5;
+}
+
+header .profile-image:hover {
+    transform: scaleX(-1);
+}
+
+header .profile-image:hover:hover {
+    margin-top: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid black;
+    transition: all 0.5s;
+}
+
+/* Slight spacing improvement around video section */
+.card {
+    margin-top: 100px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+
+.card .thumbnail{
+  width:100%;
+}
+
+.card {
+  margin: 30px;
+  padding: 20px 40px 40px;
+  max-width: 500px;
+  text-align: left;
+  background: wheat;
+  border-bottom: 4px solid wheat;
+  border-radius: 6px;
+  transition: all .5s;
+}
+
+.video {
+    margin-top: 100px;
+}
+
+/* SECTION CONTROL */
+
+.product-showcase {
+    padding: 120px 8%;
+    background: wheat;
+    margin-top: 0px;
+}
+
+.showcase-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.showcase-content {
+    max-width: 520px;
+}
+
+.feature-checklist {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.feature-checklist li {
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.feature-checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #000;
+    font-weight: 700;
+}
+
+.product-description {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.showcase-video video {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.showcase-card {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.flip-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 1rem;
+    margin-top: 100px;
+}
+
+/* CARD SIZE */
+.flip-card {
+    width: 380px;
+    height: 480px;
+    perspective: 1400px;
+     box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+    border-radius: 20px;
+}
+
+/* Hide by default (desktop & tablet) */
+.tap-hint {
+    display: none;
+}
+
+/* ROTATION WRAPPER */
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* FLIP ON HOVER */
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* FACES */
+.flip-front,
+.flip-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* FRONT */
+.flip-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BACK */
+.flip-back {
+    background: #111;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.flip-back p {
+    margin-top: 20px;
+}
+
+.tmi {
+        
+    background: wheat;
+    outline: none;
+    padding: 15px 35px;
+    color: black;
+    margin-top: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+
+/* TAGS */
+.tag {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    display: table;
+    margin: 10px auto;
+}
+
+/* LOCATION */
+.location {
+    background-color: wheat;
+    color: black;
+}
+
+/* SKILLS LIST */
+ul.skills {
+    padding: 0;
+    text-align: center;
+}
+
+.skills li {
+    border-radius: 6px;
+    display: inline-block;
+    background: wheat;
+    color: black;
+    padding: 5px 10px;
+    margin: 2px;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    min-height: 30px;
+    padding: 20px 0 40px 20px;
+    background-color: wheat;
+    color: black;
+}
+
+footer .copyright {
+    top: -8px;
+    font-size: 0.75em;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+/* SOCIAL LINKS */
+a.social {
+    display: inline-block;
+    text-indent: -9999px;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    opacity: 0.4;
+    transition: opacity 0.5s;
+}
+
+a.social:hover {
+    opacity: 1;
+}
+
+a.twitter { background-image: url(images/twitter.svg); }
+a.linkedin { background-image: url(images/linkedin.svg); }
+a.github { background-image: url(images/github.svg); }
+
+.clearfix {
+    clear: both;
+}
+
+/* MEDIA QUERIES */
+
+@media screen 
+  and (max-width: 375px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .box {
+        width: 125px;
+        height: 190px;
+    }
+
+    .box div {
+        transform: rotateY(calc(var(--v) * 72deg)) translateZ(150px);
+    }
+}
+
+@media screen and (max-width: 430px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    /* CENTER & SCALE THE GALLERY */
+    .gallery-section {
+        min-height: auto;
+        padding: 0;
+        flex-direction: column;
+        padding: 60px 5%;
+        text-align: center;
+        gap: 40px;
+    }
+
+        nav a::after {
+        transition: none;
+        width: 0 !important;
+    }
+
+
+    .box {
+        width: 160px;
+        height: 240px;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .box div {
+        transform: rotateY(calc(var(--v) * 72deg)) translateZ(200px);
+    }
+
+    .promo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 5%;
+      gap: 32px; /* space between text & gallery */
+    }
+
+
+.promo h1 {
+        font-size: 26px;
+        line-height: 1.2;
+        align-items: center;
+        margin-left: 18px;
+}
+
+.promo p {
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        margin-left: 0px;
+}
+
+.promo button {
+            
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+}
+}
+
+@media(max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+    .hero {
+        background-position: 150px 350px;
+    }
+}
+
+@media(max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+    .hero {
+        background-position: 150px 350px;
+    }
+}
+
+/* iPhone / Small Mobile Styles */
+@media screen and (max-width: 430px) {
+    
+    /* fix hero padding so text isn't touching the edges */
+    .hero {
+        padding: 0 5%;
+        background-color: wheat;
+    }
+
+    /* make H1 smaller so it fits nicely */
+    .hero h1 {
+        font-size: 40px;
+        margin-top: 100px;
+        margin-left: 40px;
+    }
+
+        /* remove absolute positioning */
+    .hero-gif {
+        position: static;
+        transform: none;
+        width: 260px;
+        max-width: 100%;
+        margin: 40px auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .hero button {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto 0;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+
+    /* make the CTA block centered and readable */
+    .cta {
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    /* buttons readable and bigger for touch */
+    .hero button,
+    .cta button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+/* iPhone / Small Device Layout */
+@media screen and (max-width: 430px) and (-webkit-min-device-pixel-ratio: 2){
+
+
+    /* HIDE elements you don't want on iPhone */
+    .hero h2,   /* subheading */
+    .cta,       /* the entire lineup section */
+    .cta p,     /* the text inside CTA */
+    .cta button /* discover button */ 
+    {
+        display: none !important;
+    }
+
+
+    .hero {
+        padding: 0 5%;
+    }
+
+
+    .hero button {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 40px;
+    }
+
+    /* iPhone brand row */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* show text only on iPhone */
+.brand-text {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 30px;
+}
+
+.menu-text {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+/* shrink logo only on iPhone */
+.logo {
+    width: 65px;
+}
+
+/* keep hamburger pushed right */
+nav {
+    justify-content: space-between;
+}
+
+    .flip-card.is-flipped .flip-inner {
+        transform: rotateY(180deg);
+    }
+
+    .tap-hint {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        opacity: 0.6;
+    }
+
+@media(max-width: 800px){
+    .menu-button {
+        display: block; /* show only on mobile */
+    }
+}
+}
+@media (max-width: 900px) {
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .showcase-card {
+        justify-content: center;
+    }
+
+    .showcase-title {
+        font-size: 34px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo {
+        max-width: 1400px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .box {
+        width: 230px;
+        height: 340px;
+    }
+
+    .box div {
+        transform: rotateY(calc(var(--v) * 72deg)) translateZ(320px);
+    }
+}
+
