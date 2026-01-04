@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO TITLE -->
+    <title>Official Gear | Digital Coaching Boards & Lineup Cards for Sports</title>
+
+    <!-- SEO META DESCRIPTION -->
+    <meta name="description" content="Official Gear offers digital coaching boards and custom lineup cards for soccer, basketball, hockey, rugby, and volleyball. Upgrade your coaching strategies with interactive tools today.">
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="whistle-logo.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hero">
+    <!-- NAVIGATION -->
+     <nav> 
+        <div class="nav-brand">
+        <img src="BlackLogo.png" class="logo" alt="Official Gear Logo">
+        <span class="brand-text">Homepage.</span>
+        </div>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html">HOME.</a></li>
+            <li><a href="clipboard.html">CLIPBOARDS.</a></li>
+            <li><a href="lineup.html">LINEUP CARDS.</a></li>
+            <li><a href="Official-Gear-Products-2025.pdf">MORE GEAR.</a></li>
+            <li><a href="aboutus.html">ABOUT US.</a></li>
+        </ul>
+        <ul>
+            <li class="hideOnMobile"><a href="index.html">HOME.</a></li>
+            <li class="hideOnMobile"><a href="clipboard.html">CLIPBOARDS.</a></li>
+            <li class="hideOnMobile"><a href="lineup.html">LINEUP CARDS.</a></li>
+            <li class="hideOnMobile"><a href="Official-Gear-Products-2025.pdf">MORE GEAR.</a></li>
+            <li class="hideOnMobile"><a href="aboutus.html">ABOUT US.</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><span class="menu-text">MENU</span><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+           </li>
+
+        </ul>
+    </nav>
+
+<script>
+    function showSidebar() {
+        document.querySelector('.sidebar').style.display = 'flex';
+    }
+    function hideSidebar() {
+        document.querySelector('.sidebar').style.display = 'none';
+    }
+    function gotoLink(button) {
+        location.href = button.value;
+    }
+</script>
+
+    <!-- HERO TEXT -->
+    <h1>Official Gear.</h1>
+    <h2>Discover the ultimate coaching tool</h2>
+
+<button type="button" onclick="document.getElementById('promo').scrollIntoView({ behavior: 'smooth' });">
+    Upgrade your game &#8681;
+</button>
+<script>
+function scrollToPromoCenter() {
+    const promo = document.getElementById('promo');
+
+    // Calculate the vertical center of the promo section
+    const promoTop = promo.getBoundingClientRect().top + window.pageYOffset;
+    const promoHeight = promo.offsetHeight;
+    const promoCenter = promoTop + promoHeight / 2;
+
+    // Calculate the scroll position so the center of the promo is in the middle of the viewport
+    const viewportHeight = window.innerHeight;
+    const scrollToPosition = promoCenter - viewportHeight / 2;
+
+    const start = window.scrollY;
+    const distance = scrollToPosition - start;
+    const duration = 1200; // adjust higher for slower scroll
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        window.scrollTo(0, start + distance * easeInOutQuad(progress));
+        if (progress < 1) requestAnimationFrame(animation);
+    }
+
+    // Smooth easing function
+    function easeInOutQuad(t) {
+        return t < 0.5 ? 2*t*t : -1 + (4 - 2*t)*t;
+    }
+
+    requestAnimationFrame(animation);
+}
+</script>
+
+
+
+    <div class="cta">
+        <p>Create FREE custom lineup cards.</p>
+        <button type="button" onclick="location.href='lineup.html'" value="lineup.html">Discover &#8680;</button>
+    </div>
+</div>
+
+<div class="promo" id="promo">
+<h1>2026 Digital LCD Coaching Clipboard.</h1>
+<p>Plan your plays in seconds with the newest coaching technology</p>
+
+<button type="button" onclick="location.href='clipboard.html'" value="clipboard.html">Explore</button>
+
+  </div>
+<!--Coaching Board Gallery-->
+<section class="gallery section" id="gallery">
+
+<div class="box">
+    <div style="--v: 1;"><img src="digital-coaching-board-soccer.webp"></div>
+    <div style="--v: 2;"><img src="digital-coaching-board-volleyball.webp"></div>
+    <div style="--v: 3;"><img src="digital-coaching-board-basketball.webp"></div>
+    <div style="--v: 4;"><img src="digital-coaching-board-hockey.webp"></div>
+    <div style="--v: 5;"><img src="digital-coaching-board-rugby.webp"></div>
+</div>
+
+</section>
+
+<section class="product-showcase">
+
+  <h2 class="showcase-title">Get a closer look &#8681;</h2>
+
+  <div class="showcase-grid">
+
+    <!-- LEFT CONTENT -->
+    <div class="showcase-content">
+
+      <ul class="feature-checklist">
+        <li>One-touch instant erase</li>
+        <li>No-glare display</li>
+        <li>Most efficient and convenient coaching product today</li>
+      </ul>
+
+      <p class="product-description">
+        The Playmaker LCD coaching clipboard lets you draw, erase, and
+        adjust plays instantly, without paper, glare, or distractions.
+        Designed for fast-paced games, it gives coaches a clear, reusable
+        way to communicate strategy in real time.
+      </p>
+
+      <!-- VIDEO -->
+      <div class="showcase-video">
+        <video src="OGvid.mp4" controls muted playsinline></video>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: FLIP CARD -->
+    <div class="showcase-card">
+      <!-- KEEP YOUR EXISTING FLIP CARD HTML HERE -->
+       <section class="flip-section">
+  <div class="flip-card">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <img src="digital-coaching-board-soccer.webp" alt="">
+      </div>
+      <div class="flip-back">
+        <h2>One board.</h2>
+        <p>Endless plays.</p>
+        <a href="clipboard.html" class="tmi">Get mine</a>
+      </div>
+    </div>
+  </div>
+  </section>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+    const isMobile = window.matchMedia("(max-width: 430px)").matches;
+
+    if (!isMobile) return;
+
+    document.querySelectorAll('.flip-card').forEach(card => {
+        card.addEventListener('click', function () {
+            card.classList.toggle('is-flipped');
+        });
+    });
+})();
+</script>
+
+
+<!--Footer-->
+<footer>
+    &copy; 2025 Official Gear. All rights reserved.
+</footer>
+
+<!-- JSON-LD STRUCTURED DATA FOR ORGANIZATION -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Official Gear",
+  "url": "homepage.html",
+  "logo": "BlackLogo.png",
+  "description": "Official Gear offers digital coaching boards and custom lineup cards for soccer, basketball, hockey, rugby, and volleyball. Upgrade your coaching strategies with interactive tools.",
+  "sameAs": [
+    "https://twitter.com/YourTwitter",
+    "https://www.linkedin.com/in/YourLinkedIn",
+    "https://github.com/YourGitHub"
+  ]
+}
+</script>
+
+</body>
+</html>
