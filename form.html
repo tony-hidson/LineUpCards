@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> Official Gear</title>
+        <link rel="stylesheet" href="form.css">
+        <link rel="shortcut icon" href="PDF Whistle Logo - no BG.png" type="image/x-icon">
+      </head>
+
+<form class="my-form" action="https://api.web3forms.com/submit" method="POST">
+  <div class="container">
+    <input type="hidden" name="access_key" value="bed7cdb4-64b0-4811-88ac-d855734c4c8a">
+    <h1>Get in touch!</h1>
+    <ul>
+      <li>
+        <select>
+          <option selected disabled>-- What would you like from us? --</option>
+          <option>Soccer Clipboard ($70 + GST and shipping)</option>
+          <option>Basketball Clipboard ($70 + GST and shipping)</option>
+          <option>Hockey Clipboard ($70 + GST and shipping)</option>
+          <option>Rugby Clipboard ($70 + GST and shipping)</option>
+          <option>Volleyball Clipboard ($70 + GST and shipping)</option>
+          <option>Free Clipboard Pen Replacement</option>
+          <option>Product List items</option>
+          <option>Other</option>      
+        </select>
+      </li>
+      <li>
+        <div class="grid grid-2">
+          <input type="text"  name="name" placeholder="Name" required>  
+          <input type="text"  name="last name" placeholder="Surname" required>
+        </div>
+      </li>
+      <li>
+        <div class="grid grid-2">
+          <input type="email" name="email"  placeholder="Email" required>  
+          <input type="tel"   name="message"  placeholder="Phone">
+        </div>
+      </li>    
+      <li>
+        <textarea name="message" placeholder="Message (specify details such as quantity, type, etc)"></textarea>
+      </li>   
+      <li>
+        <input type="checkbox"  name="terms"  id="terms">
+        <label for="terms">I have read and agreed with <a href="TERMS AND CONDITIONS.pdf">the terms and conditions.</a></label>
+      </li>  
+      <li>
+        <div class="grid grid-3">
+          <button class="btn-grid" type="submit" disabled>
+            <span class="back">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
+            </span>
+            <span class="front">SUBMIT</span>
+          </button>
+          <button class="btn-grid" type="reset" disabled>
+            <span class="back">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/eraser-icon.svg" alt="">
+            </span>
+            <span class="front">RESET</span>
+          </button> 
+        </div>
+      </li>    
+    </ul>
+  </div>
+</form>
+
+<script src="form.js"></script>
+</html>
